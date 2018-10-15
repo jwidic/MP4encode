@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1539566816 source:/home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/main.cpp
+1539566816 source:/home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/main.cpp
 	<stdio.h>
 	"MP4Encoder.h"
 
-1539565418 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/MP4Encoder.h
-	"mp4v2.h"
+1539577388 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/MP4Encoder.h
+	"include/mp4v2/mp4v2.h"
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/mp4v2.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/mp4v2.h
 	<mp4v2/platform.h>
 	<mp4v2/project.h>
 	<mp4v2/general.h>
@@ -21,39 +21,37 @@
 	<mp4v2/streaming.h>
 	<mp4v2/isma.h>
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/platform.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/platform.h
 	<stddef.h>
 	<stdio.h>
 	<stdarg.h>
 	<stdint.h>
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/project.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/project.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/general.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/general.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/file.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/file.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/file_prop.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/file_prop.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/track.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/track.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/track_prop.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/track_prop.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/sample.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/sample.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/chapter.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/chapter.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/itmf_generic.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/itmf_generic.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/itmf_tags.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/itmf_tags.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/streaming.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/streaming.h
 
-1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/include/mp4v2/isma.h
+1415805288 /home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/include/mp4v2/isma.h
 
-1499326384 source:/home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/MP4Encoder.cpp
+1499326384 source:/home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/MP4Encoder.cpp
 	"MP4Encoder.h"
 	<string.h>
-
-1539565460 source:/home/fredy/install/work/MP4/MP4Encoder/MP4Encoder/MP4Encoder/mp4encode/main.cpp
 
