@@ -55,3 +55,29 @@
 	"MP4Encoder.h"
 	<string.h>
 
+1539577861 source:/home/fredy/install/work/MP4/MP4Encoder/mp4encode/main.cpp
+	<stdio.h>
+	"MP4Encoder.h"
+
+1539577861 /home/fredy/install/work/MP4/MP4Encoder/mp4encode/MP4Encoder.h
+	"include/mp4v2/mp4v2.h"
+
+1539577861 /home/fredy/install/work/MP4/MP4Encoder/mp4encode/include/mp4v2/mp4v2.h
+	<mp4v2/platform.h>
+	<mp4v2/project.h>
+	<mp4v2/general.h>
+	<mp4v2/file.h>
+	<mp4v2/file_prop.h>
+	<mp4v2/track.h>
+	<mp4v2/track_prop.h>
+	<mp4v2/sample.h>
+	<mp4v2/chapter.h>
+	<mp4v2/itmf_generic.h>
+	<mp4v2/itmf_tags.h>
+	<mp4v2/streaming.h>
+	<mp4v2/isma.h>
+
+1539597294 source:/home/fredy/install/work/MP4/MP4Encoder/mp4encode/MP4Encoder.cpp
+	"MP4Encoder.h"
+	<string.h>
+

@@ -4,10 +4,11 @@ created:    2013-04-16
 author:     firehood
 purpose:    MP4编码器，基于开源库mp4v2实现（https://code.google.com/p/mp4v2/）。
 *********************************************************************/
-#include "MP4Encoder.h"  
-#include <string.h>  
+#include "MP4Encoder.h"
+#include <string.h>
 
-#define BUFFER_SIZE  (1024*1024)  
+#define BUFFER_SIZE  (1024*1024)
+
 
 MP4Encoder::MP4Encoder(void) :
 	m_videoId(NULL),
@@ -28,7 +29,7 @@ MP4FileHandle MP4Encoder::CreateMP4File(const char *pFileName, int width, int he
 	{
 		return false;
 	}
-	// create mp4 file  
+	// create mp4 file
 	MP4FileHandle hMp4file = MP4Create(pFileName);
 	if (hMp4file == MP4_INVALID_FILE_HANDLE)
 	{
@@ -37,7 +38,7 @@ MP4FileHandle MP4Encoder::CreateMP4File(const char *pFileName, int width, int he
 	}
 	m_nWidth = width;
 	m_nHeight = height;
-	m_nTimeScale = 90000;
+	m_nTimeScale = 1200000;
 	m_nFrameRate = 25;
 	MP4SetTimeScale(hMp4file, m_nTimeScale);
 	return hMp4file;
@@ -49,23 +50,23 @@ bool MP4Encoder::Write264Metadata(MP4FileHandle hMp4File, LPMP4ENC_Metadata lpMe
 	(hMp4File,
 		m_nTimeScale,
 		m_nTimeScale / m_nFrameRate,
-		m_nWidth, // width  
-		m_nHeight,// height  
-		lpMetadata->Sps[1], // sps[1] AVCProfileIndication  
-		lpMetadata->Sps[2], // sps[2] profile_compat  
-		lpMetadata->Sps[3], // sps[3] AVCLevelIndication  
-		3);           // 4 bytes length before each NAL unit  
+		m_nWidth, // width
+		m_nHeight,// height
+		lpMetadata->Sps[1], // sps[1] AVCProfileIndication
+		lpMetadata->Sps[2], // sps[2] profile_compat
+		lpMetadata->Sps[3], // sps[3] AVCLevelIndication
+		3);           // 4 bytes length before each NAL unit
 	if (m_videoId == MP4_INVALID_TRACK_ID)
 	{
 		printf("add video track failed.\n");
 		return false;
 	}
-	MP4SetVideoProfileLevel(hMp4File, 0x01); //  Simple Profile @ Level 3  
+	MP4SetVideoProfileLevel(hMp4File, 0x01); //  Simple Profile @ Level 3
 
-											 // write sps  
+											 // write sps
 	MP4AddH264SequenceParameterSet(hMp4File, m_videoId, lpMetadata->Sps, lpMetadata->nSpsLen);
 
-	// write pps  
+	// write pps
 	MP4AddH264PictureParameterSet(hMp4File, m_videoId, lpMetadata->Pps, lpMetadata->nPpsLen);
 
 	return true;
@@ -85,29 +86,29 @@ int MP4Encoder::WriteH264Data(MP4FileHandle hMp4File, const unsigned char* pData
 	int pos = 0, len = 0;
 	while (len = ReadOneNaluFromBuf(pData, size, pos, nalu))
 	{
-		if (nalu.type == 0x07) // sps  
+		if (nalu.type == 0x07) // sps
 		{
-			// 添加h264 track      
+			// 添加h264 track
 			m_videoId = MP4AddH264VideoTrack
 			(hMp4File,
 				m_nTimeScale,
 				m_nTimeScale / m_nFrameRate,
-				m_nWidth,     // width  
-				m_nHeight,    // height  
-				nalu.data[1], // sps[1] AVCProfileIndication  
-				nalu.data[2], // sps[2] profile_compat  
-				nalu.data[3], // sps[3] AVCLevelIndication  
-				3);           // 4 bytes length before each NAL unit  
+				m_nWidth,     // width
+				m_nHeight,    // height
+				nalu.data[1], // sps[1] AVCProfileIndication
+				nalu.data[2], // sps[2] profile_compat
+				nalu.data[3], // sps[3] AVCLevelIndication
+				3);           // 4 bytes length before each NAL unit
 			if (m_videoId == MP4_INVALID_TRACK_ID)
 			{
 				printf("add video track failed.\n");
 				return 0;
 			}
-			MP4SetVideoProfileLevel(hMp4File, 1); //  Simple Profile @ Level 3  
+			MP4SetVideoProfileLevel(hMp4File, 1); //  Simple Profile @ Level 3
 
 			MP4AddH264SequenceParameterSet(hMp4File, m_videoId, nalu.data, nalu.size);
 		}
-		else if (nalu.type == 0x08) // pps  
+		else if (nalu.type == 0x08) // pps
 		{
 			MP4AddH264PictureParameterSet(hMp4File, m_videoId, nalu.data, nalu.size);
 		}
@@ -115,7 +116,7 @@ int MP4Encoder::WriteH264Data(MP4FileHandle hMp4File, const unsigned char* pData
 		{
 			int datalen = nalu.size + 4;
 			unsigned char *data = new unsigned char[datalen];
-			// MP4 Nalu前四个字节表示Nalu长度  
+			// MP4 Nalu前四个字节表示Nalu长度
 			data[0] = nalu.size >> 24;
 			data[1] = nalu.size >> 16;
 			data[2] = nalu.size >> 8;

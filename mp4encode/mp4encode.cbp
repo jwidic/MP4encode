@@ -14,6 +14,9 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="../../../h264_2_mp4/mp4v2/_install/lib/libmp4v2.a" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/mp4encode" prefix_auto="1" extension_auto="1" />
@@ -32,6 +35,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="MP4Encoder.cpp" />
+		<Unit filename="MP4Encoder.h" />
+		<Unit filename="include/mp4v2/chapter.h" />
+		<Unit filename="include/mp4v2/file.h" />
+		<Unit filename="include/mp4v2/file_prop.h" />
+		<Unit filename="include/mp4v2/general.h" />
+		<Unit filename="include/mp4v2/isma.h" />
+		<Unit filename="include/mp4v2/itmf_generic.h" />
+		<Unit filename="include/mp4v2/itmf_tags.h" />
+		<Unit filename="include/mp4v2/mp4v2.h" />
+		<Unit filename="include/mp4v2/platform.h" />
+		<Unit filename="include/mp4v2/project.h" />
+		<Unit filename="include/mp4v2/sample.h" />
+		<Unit filename="include/mp4v2/streaming.h" />
+		<Unit filename="include/mp4v2/track.h" />
+		<Unit filename="include/mp4v2/track_prop.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
