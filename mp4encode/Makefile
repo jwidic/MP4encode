@@ -15,9 +15,10 @@ LDFLAGS = -L ./lib
 # running lib path
 RPATH = -Wl,-rpath=./lib
 
+# SRC
+SRCS = main.cpp MP4Encoder.cpp
 # Obj file
 OBJS = $(SRCS:.cpp=.o)
-
 
 $(TARGET):$(OBJS)
 #	$(CC) -o $@ $^ $(LDFLAGS) $(DLIBS) $(RPATH)
@@ -29,7 +30,7 @@ clean:
 
 # continue :1 clean 2 compile 3.run
 exec:clean $(TARGET)
-	@echo  run
+	@echo  run the app
 	./$(TARGET)
 	@echo  finish!!!
 # compile rules
